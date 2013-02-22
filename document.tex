@@ -1,0 +1,145 @@
+\documentclass[landscape,a4paper,10pt]{article}
+
+\usepackage[T1]{fontenc}        % cleaner font
+\usepackage[utf8]{inputenc}     % UTF-8 support
+\usepackage{amsmath}            % more math symbols
+\usepackage{amssymb}            % allow math symbols of form \mathbb{...}
+\usepackage{graphicx}           % enhanced graphics support
+\usepackage{epstopdf}           % automagically turn eps to pdf, for gnuplot
+\usepackage{subcaption}         % subfigure support
+\usepackage[dvipsnames]{xcolor} % syntax coloring support
+\usepackage{listings}           % programming language support
+\usepackage{algorithmic}        % pseudocode support
+\usepackage{algorithm}
+\usepackage{cancel}             % cancel out terms in division
+\usepackage{parskip}            % enable spacing between paragraphs
+\usepackage{cases}              % enable math function definitions with cases
+\usepackage{titling}            % allow adjustment of document title
+\usepackage{fullpage}           % 1 inch margins
+\usepackage{bm}                 % bold math fonts for vectors and stuff
+\usepackage{nicefrac}           % Nicer looking fractions
+\usepackage{floatflt}           % Allows text to float around figures / tables
+\usepackage{multicol}
+\usepackage[landscape]{geometry}
+
+\usepackage[finnish]{babel}    % use Finnish for hyphenation
+%\usepackage{hyperref}          % make clickable urls
+%\usepackage{color}             % colored text?
+
+% CHEAT SHEET: minimize margins
+\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm}
+
+% CHEAT SHEET: turn off header and footer
+\pagestyle{empty}
+
+% CHEAT SHEET: Redefine section commands to use less space
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1explus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+
+% CHEAT SHEET: Don't print section numbers
+\setcounter{secnumdepth}{0}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+
+% Adjust title vertical position
+\setlength{\droptitle}{-2cm}
+
+% Set up syntax highlighting for programming languages
+\lstloadlanguages{Ruby}
+\lstset{%
+basicstyle=\ttfamily\bfseries\footnotesize,
+commentstyle = \ttfamily\color{orange},
+keywordstyle=\ttfamily\color{blue},
+stringstyle=\color{red},
+showstringspaces=false,
+frame=trbl,
+}
+
+% Custom probability macros
+\def\ci{\perp\!\!\!\perp}              % Independence symbol
+\newcommand{\jpr}[2]{P(#1 \, , \, #2)} % Joint probability
+\newcommand{\cpr}[2]{P(#1 \, | \, #2)} % Conditional probability
+
+
+% Avoin joukko / Suljettu joukko symbolit
+\newcommand\opn{\mathrel{\ooalign{$\subset$\cr
+  \hidewidth\hbox{$\circ\mkern.5mu$}\cr}}}
+\newcommand\cls{\mathrel{\ooalign{$\subset$\cr
+  \hidewidth\hbox{$\bullet\mkern.5mu$}\cr}}}
+
+\begin{document}
+\begin{multicols*}{3}
+% CHEAT SHEET: Multicol params
+
+\section{Esitietoja}
+\section{Vektoriavaruudet}
+\section{Metriikka}
+\section{Avoimet joukot}
+$$U \opn X \iff \forall x \in U \; \exists B(x,r) \subset U \quad (r>0)$$
+\section{Jatkuvuus}
+\section{Suljetut joukot}
+\end{multicols*}
+\end{document}
+
+% ---- EXAMPLES BELOW ----
+
+% -- Example of figure for imagename.eps
+% \begin{figure}
+%     \includegraphics[scale=0.5]{imagename}
+%     \caption*{Caption be here.}
+% \end{figure}
+
+% -- Example of floating figure for imagename.eps
+% \begin{floatingfigure}[r]{0.49\textwidth}
+%   \includegraphics[scale=0.31]{imagename}
+%   \caption*{Caption be here.}
+% \end{floatingfigure}
+
+% -- Example of two figures side-by-side
+% \begin{figure}[h]
+%   \centering
+%   \begin{subfigure}{.5\textwidth}
+%     \centering
+%     \includegraphics[width=.9\linewidth]{fig1.eps}
+%     \caption*{Caption here}
+%   \end{subfigure}%
+%   \begin{subfigure}{.5\textwidth}
+%     \centering
+%     \includegraphics[width=.9\linewidth]{fig2.eps}
+%     \caption*{Caption be here}
+%   \end{subfigure}
+%   \caption{Shared caption}
+%   \label{fig:fighere}
+% \end{figure}
+
+% -- Remove pagination
+% \thispagestyle{empty}
+% \pagestyle{empty}
+
+% -- Example of code listing
+%\lstinputlisting[language=Ruby, caption={file.rb}]{./file.rb}
+
+% -- Example of cases-environment
+% $$
+% f(x) =
+% \begin{cases}
+%     x^2 & \text{if } x > 0 \\
+%     0 & \text{otherwise } \\
+% \end{cases}
+% $$
+
+% -- Example of multicolumn row in tabular environment
+% \multicolumn{3}{|c|}{Cell spanning three columns}
