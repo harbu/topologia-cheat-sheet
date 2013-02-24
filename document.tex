@@ -21,13 +21,14 @@
 \usepackage{floatflt}           % Allows text to float around figures / tables
 \usepackage{multicol}
 \usepackage[landscape]{geometry}
+\usepackage{amsthm}
 
 \usepackage[finnish]{babel}    % use Finnish for hyphenation
 %\usepackage{hyperref}          % make clickable urls
 %\usepackage{color}             % colored text?
 
 % CHEAT SHEET: minimize margins
-\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm}
+\geometry{top=0.5cm,left=0.5cm,right=0.5cm,bottom=0.5cm}
 
 % CHEAT SHEET: turn off header and footer
 \pagestyle{empty}
@@ -78,7 +79,13 @@ frame=trbl,
 \newcommand\opn{\mathrel{\ooalign{$\subset$\cr
   \hidewidth\hbox{$\circ\mkern.5mu$}\cr}}}
 \newcommand\cls{\mathrel{\ooalign{$\subset$\cr
-  \hidewidth\hbox{$\bullet\mkern.5mu$}\cr}}}
+\hidewidth\raise.225ex\hbox{$\text{{\scriptsize c}}\mkern2mu$}\cr}}}
+
+% Theorems
+\newtheoremstyle{customtheoremstyle}{}{}{}{}{\bfseries}{}{ }{}
+\theoremstyle{customtheoremstyle}
+\newtheorem*{theorem}{Lause}
+\newtheorem*{definition}{Määritelmä}
 
 \begin{document}
 \begin{multicols*}{3}
@@ -86,11 +93,116 @@ frame=trbl,
 
 \section{Esitietoja}
 \section{Vektoriavaruudet}
+
+\newtheorem*{vktava}{Vektoriavaruus}
+\begin{vktava}
+  on joukko $E$ jossa $\forall x,y \in E$ ja $\forall a,b \in \mathbb{R}$
+  \begin{multicols}{2}
+    \begin{itemize}
+      \item{$x + y \in E$, $ax \in E$}
+      \item{$x + y$ vaihd. ja liitän.}
+      \item{$\exists \in \overline0 \; \text{s.e.} \; \overline0 + x = x$}
+      \item{$\exists -x \in E \; \text{s.e.} \; x + (-x) = \overline0$}
+      \item{$(ab)x = a(bx)$}
+      \item{$a(x + y) = ax + ay$}
+      \item{$(a + b)x = ax + bx$}
+      \item{$1x = x$}
+    \end{itemize}
+  \end{multicols}
+\end{vktava}
+
+\newtheorem*{normi}{Normi}
+\begin{normi}
+  Kuvaus $x \mapsto \|x\| : E \rightarrow \mathbb{R}_+$ on normi
+  vek.avaruudessa $E$
+  jos
+  \begin{itemize}
+    \item[(N1)]{$\|x + y\| \leq \|x\| + \|y\|$}
+    \item[(N2)]{$\|ax\| = |a|\|x\|$}
+    \item[(N3)]{$\|x\| = 0 \iff x = \overline0$}
+  \end{itemize}
+\end{normi}
+
+Jokainen sisätuloavaruus on normiavaruus.
+
+\newtheorem*{schwarz}{Schwarzin ey}
+\begin{schwarz}
+  Jos $E$ on sisätuloavaruus, niin $\forall x,y \in E$
+  $$| x \cdot y | \leq \|x\|\|y\|.$$
+\end{schwarz}
+
 \section{Metriikka}
 \section{Avoimet joukot}
 $$U \opn X \iff \forall x \in U \; \exists B(x,r) \subset U \quad (r>0)$$
 \section{Jatkuvuus}
 \section{Suljetut joukot}
+\newtheorem*{defn:closedSet}{Suljettu joukko}
+\begin{defn:closedSet}
+  $F \cls X \iff F^C \opn X$.
+\end{defn:closedSet}
+
+\newtheorem*{defn:closure}{Sulkeuma}
+\begin{defn:closure}
+  \begin{align*}
+    \bar{A} &=
+    \{ x \in X \; | \; \forall \, U(x) \opn X \; \text{pätee} \; U(x) \cap A \neq \emptyset \}
+    \\
+    &= \{ x \in X \; | \; \forall r > 0 \; \text{pätee} \; B(x,r) \cap A \neq
+    \emptyset \}
+  \end{align*}
+\end{defn:closure}
+
+\begin{theorem}
+  Kun kaikki $F_j \cls X$ niin
+  \begin{enumerate}
+    \item{$\cap_{j \in J} F_j \cls X$.}
+    \item{$\cap_{i=1}^{n} F_j \cls X$.}
+    \item{$X \cls X$, $\emptyset \cls X$.}
+  \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+  Jos $U \opn X$ ja $F \cls X$ niin $U \setminus F \opn X$ ja $F \setminus U
+  \cls X$.
+\end{theorem}
+
+\begin{theorem}
+  Olkoot $A,B \subset X$.
+  \begin{enumerate}
+    \item[(1)]{$A \subset \bar{A}$}
+    \item[(2)]{$\bar{A}$ suljettu}
+    \item[(3)]{$A \subset B \cls X \implies \bar{A} \subset B$}
+    \item[(4)]{$\bar{A}$ on suppein sulj. osajoukko, joka sisältää $A$:n}
+    \item[(5)]{$A \subset B \implies \bar{A} \subset \bar{B}$}
+    \item[(6)]{$A \cls X \iff A = \bar{A}$}
+    \item[(7)]{$\bar{\bar{A}} = \bar{A}$}
+    \item[(8)]{$\overline{A \cup B} = \bar{A} \cup \bar{B}$}
+    \item[(9)]{$\overline{A \cap B} \subset \bar{A} \cap \bar{B}$}
+  \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+  Olkoon $\emptyset \neq A \subset R$ ja $\sup A < \infty$. Tällöin $\sup A \in
+  \bar{A}$.
+\end{theorem}
+
+\begin{theorem}
+  $\bar{A} = \{ x \in X \; | \; d(x,A) = 0 \}$ kun $\emptyset \neq A \subset X$.
+\end{theorem}
+
+\begin{theorem}
+  $f$ jva pisteessä $a$ $\iff$ Jos $A \subset X$ ja $a \in \bar{A}$ niin
+  $f(a) \in \overline{fA}$.
+\end{theorem}
+
+\begin{theorem}
+  SEY
+  \begin{enumerate}
+    \item[(1)]{$f$ on jva}
+    \item[(2)]{$\forall \, F \cls Y$: $f^{-1}[F] \cls X$ }
+    \item[(3)]{$\forall A \subset X$: $f[\bar{A}] \subset \overline{f[A]}$}
+  \end{enumerate}
+\end{theorem}
 \end{multicols*}
 \end{document}
 
