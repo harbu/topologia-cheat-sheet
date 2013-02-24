@@ -162,6 +162,44 @@ $$U \opn X \iff \forall x \in U \; \exists B(x,r) \subset U \quad (r>0)$$
   f^{-1} B(f(a),\epsilon)$.
 \end{definition}
 
+\newtheorem*{lipschitz}{Lipschitz-kuvaus}
+\begin{lipschitz}
+  $f: X \rightarrow Y$ on $M$-Lipschitz (eli myös jva) jos $\exists M \geq 0$ s.e.
+  $d'(f(x),f(y)) \leq M d(x,y), \; \forall x,y \in X$.
+\end{lipschitz}
+Esim. $f: X \rightarrow \mathbb{R}, \: f(x) = d(x,A)$ on $1$-Lipschitz.
+
+\begin{theorem}
+  S.E.Y.
+  \begin{enumerate}
+    \item[(1)]{$f$ jva pisteessä $a$.}
+    \item[(2)]{$\forall$ $f(a)$ ystöä $V$ kohti $\exists$ $a$:n ystö U s.e. $f
+      U \subset V$.}
+    \item[(3)]{$\forall$ $f(a)$ ystöä $V$ kohti $\exists$ $a$:n ystö U s.e. $U
+      \subset f^{-1} V$.}
+  \end{enumerate}
+\end{theorem}
+
+\newtheorem*{alkukuvaehto}{Alkukuvaehto}
+\begin{alkukuvaehto}
+  $f: X \rightarrow Y$ jva $\iff$ $\forall V \opn Y$: $f^{-1} V \opn X$
+\end{alkukuvaehto}
+
+\newtheorem*{rystö}{r-ystö}
+\begin{rystö}
+  Joukon $\emptyset \neq A \subset X$ $r$-ystö (avoin joukko) on
+  $B(A,r) = \{x \in X \; | \; d(x,A) < r\} \quad (r>0)$.
+\end{rystö}
+
+\begin{theorem}
+  \begin{enumerate}
+    \item[(1)]{$X \stackrel{f}{\rightarrow} Y \stackrel{g}{\rightarrow} Z$ jvia
+      $\implies$ $g \circ f$ jva}
+    \item[(2)]{$f : X \rightarrow \mathbb{R}$ jva ja $f(x) \neq 0$ $\implies$
+      $1/f : X \rightarrow \mathbb{R}$ jva}
+  \end{enumerate}
+\end{theorem}
+
 % --------- Suljetut joukot ---------%
 \section{Suljetut joukot}
 \newtheorem*{defn:closedSet}{Suljettu joukko}
@@ -224,7 +262,7 @@ $$U \opn X \iff \forall x \in U \; \exists B(x,r) \subset U \quad (r>0)$$
 \end{theorem}
 
 \begin{theorem}
-  SEY
+  S.E.Y.
   \begin{enumerate}
     \item[(1)]{$f$ on jva}
     \item[(2)]{$\forall \, F \cls Y$: $f^{-1}[F] \cls X$ }
