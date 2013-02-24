@@ -87,6 +87,7 @@ frame=trbl,
 \theoremstyle{customtheoremstyle}
 \newtheorem*{theorem}{Lause}
 \newtheorem*{definition}{Määritelmä}
+\newtheorem*{example}{Esim.}
 
 \begin{document}
 \begin{multicols*}{3}
@@ -149,10 +150,61 @@ Jokainen sisätuloavaruus on normiavaruus.
 
 % --------- Avoimet joukot ---------%
 \section{Avoimet joukot}
-$$U \opn X \iff \forall x \in U \; \exists B(x,r) \subset U \quad (r>0)$$
+Olkoon $(X,d)$ metrinen avaruus (=MA)
+\begin{definition}
+  $U \opn X \iff \forall x \in U \; \exists B(x,r) \subset U \quad (r>0)$
+\end{definition}
+
+\begin{theorem}
+  Kun kaikki $U_j \opn X$ niin
+  \begin{enumerate}
+    \item{$\cup_{j \in J} U_j \opn X$.}
+    \item{$\cap_{i=1}^{n} U_j \opn X$.}
+    \item{$X \opn X$, $\emptyset \opn X$.}
+  \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+$U \opn X \iff$ $U = \emptyset$ tai $U = \bigcup \{B(x,r(x)) : x \in U\}$
+\end{theorem}
+
+\newtheorem*{ystö}{Ympäristö}
+\begin{ystö}
+  Joukko $U \opn X$ on pisteen $a \in X$ ystö, jos $a \in U$. Jos $A \subset
+  U$, niin $U$ on joukon $A$ ystö.
+\end{ystö}
+
+\begin{theorem}
+  $A \opn X \iff \forall x \in A \: \exists U(x) \subset A$ missä $U(x)$
+  ystöjä.
+\end{theorem}
+
+\begin{theorem}
+  Jos $a,b \in X, \; a \neq b$, niin niillä on erilliset ystöt.
+\end{theorem}
+
+\newtheorem*{erakkopiste}{Erakkopiste}
+\begin{erakkopiste}
+ Piste $a \in A$ on $A \subset X$:n erakkopiste jos $\exists$ $a$:n ystö $V$ s.e. $V \cap A = \{a\}$.
+\end{erakkopiste}
+
+\newtheorem*{diskjoukko}{Diskreetti joukko}
+\begin{diskjoukko}
+  on $A$ jos sen kaikki pisteet ovat erakkoja.
+\end{diskjoukko}
+
+\begin{theorem}
+  Avaruus $X$ diskreetti $\iff$ kaikki osajoukot avoimia.
+\end{theorem}
+
+\begin{example}
+  äärellinen joukko ja $\mathbb{Z}$ diskreettejä. Myös $\{0,1\}$-metriikka
+  tekee diskreetin.
+\end{example}
 
 % --------- Jatkuvuus ---------%
 \section{Jatkuvuus}
+Olkoon $(X,d)$, $(Y,d')$ M.A ja $(E,\|.\|)$ normiavaruus.
 
 \begin{definition}
   $f: X \rightarrow Y$ on jva pisteessä $a$, jos $\forall \varepsilon > 0 \;
@@ -167,7 +219,10 @@ $$U \opn X \iff \forall x \in U \; \exists B(x,r) \subset U \quad (r>0)$$
   $f: X \rightarrow Y$ on $M$-Lipschitz (eli myös jva) jos $\exists M \geq 0$ s.e.
   $d'(f(x),f(y)) \leq M d(x,y), \; \forall x,y \in X$.
 \end{lipschitz}
-Esim. $f: X \rightarrow \mathbb{R}, \: f(x) = d(x,A)$ on $1$-Lipschitz.
+
+\begin{example}
+  $f: X \rightarrow \mathbb{R}, \: f(x) = d(x,A)$ on $1$-Lipschitz.
+\end{example}
 
 \begin{theorem}
   S.E.Y.
@@ -197,8 +252,14 @@ Esim. $f: X \rightarrow \mathbb{R}, \: f(x) = d(x,A)$ on $1$-Lipschitz.
       $\implies$ $g \circ f$ jva}
     \item[(2)]{$f : X \rightarrow \mathbb{R}$ jva ja $f(x) \neq 0$ $\implies$
       $1/f : X \rightarrow \mathbb{R}$ jva}
+    \item[(3)]{Jos $f,g: X \rightarrow E$ jvia pisteessä $a$, niin $f+g$ jva
+      $a$:ssa.}
+    \item[(4)]{Jos $f: X \rightarrow E$ ja $\alpha: X \rightarrow \mathbb{R}$
+      jvia pisteessä $a$, niin $\alpha f$ jva $a$:ssa.}
   \end{enumerate}
 \end{theorem}
+% TODO: projektiokuvaukset?
+% TODO: komponenttikuvaukset?
 
 % --------- Suljetut joukot ---------%
 \section{Suljetut joukot}
@@ -222,7 +283,7 @@ Esim. $f: X \rightarrow \mathbb{R}, \: f(x) = d(x,A)$ on $1$-Lipschitz.
   Kun kaikki $F_j \cls X$ niin
   \begin{enumerate}
     \item{$\cap_{j \in J} F_j \cls X$.}
-    \item{$\cap_{i=1}^{n} F_j \cls X$.}
+    \item{$\cup_{i=1}^{n} F_j \cls X$.}
     \item{$X \cls X$, $\emptyset \cls X$.}
   \end{enumerate}
 \end{theorem}
