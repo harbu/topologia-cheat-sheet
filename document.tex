@@ -22,6 +22,7 @@
 \usepackage{multicol}
 \usepackage[landscape]{geometry}
 \usepackage{amsthm}
+\usepackage{titlesec}
 
 \usepackage[finnish]{babel}    % use Finnish for hyphenation
 %\usepackage{hyperref}          % make clickable urls
@@ -38,7 +39,7 @@
 \renewcommand{\section}{\@startsection{section}{1}{0mm}%
                                 {-1ex plus -.5ex minus -.2ex}%
                                 {0.5ex plus .2ex}%x
-                                {\normalfont\large\bfseries}}
+                                {\color{red}\normalfont\large\bfseries}}
 \renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
                                 {-1explus -.5ex minus -.2ex}%
                                 {0.5ex plus .2ex}%
@@ -91,7 +92,22 @@ frame=trbl,
 \begin{multicols*}{3}
 % CHEAT SHEET: Multicol params
 
+% --------- Esitietoja ---------%
 \section{Esitietoja}
+
+\begin{theorem}
+  $A_1 \subset A_2 \iff {A_2}^C \subset {A_1}^C$
+\end{theorem}
+
+\begin{theorem}
+  Olkoon $x,y \in \mathbb{R}$.
+  \begin{align*}
+    \max \{x,y\} = \nicefrac{1}{2}(x + y + |x-y|) \\
+    \min \{x,y\} = \nicefrac{1}{2}(x + y - |x-y|)
+  \end{align*}
+\end{theorem}
+
+% --------- Vektoriavaruudet ---------%
 \section{Vektoriavaruudet}
 
 \newtheorem*{vktava}{Vektoriavaruus}
@@ -102,7 +118,7 @@ frame=trbl,
       \item{$x + y \in E$, $ax \in E$}
       \item{$x + y$ vaihd. ja liitän.}
       \item{$\exists \in \overline0 \; \text{s.e.} \; \overline0 + x = x$}
-      \item{$\exists -x \in E \; \text{s.e.} \; x + (-x) = \overline0$}
+      \item{$\exists -x \in E$: $x + (-x) = \overline0$}
       \item{$(ab)x = a(bx)$}
       \item{$a(x + y) = ax + ay$}
       \item{$(a + b)x = ax + bx$}
@@ -113,9 +129,7 @@ frame=trbl,
 
 \newtheorem*{normi}{Normi}
 \begin{normi}
-  Kuvaus $x \mapsto \|x\| : E \rightarrow \mathbb{R}_+$ on normi
-  vek.avaruudessa $E$
-  jos
+  on $x \mapsto \|x\| : E \rightarrow \mathbb{R}_+$ vek.avaruudessa $E$ jos
   \begin{itemize}
     \item[(N1)]{$\|x + y\| \leq \|x\| + \|y\|$}
     \item[(N2)]{$\|ax\| = |a|\|x\|$}
@@ -127,14 +141,28 @@ Jokainen sisätuloavaruus on normiavaruus.
 
 \newtheorem*{schwarz}{Schwarzin ey}
 \begin{schwarz}
-  Jos $E$ on sisätuloavaruus, niin $\forall x,y \in E$
-  $$| x \cdot y | \leq \|x\|\|y\|.$$
+  $| x \cdot y | \leq \|x\|\|y\|$, missä $x,y \in E$ (sis.tul.ava)
 \end{schwarz}
 
+% --------- Metriikka ---------%
 \section{Metriikka}
+
+% --------- Avoimet joukot ---------%
 \section{Avoimet joukot}
 $$U \opn X \iff \forall x \in U \; \exists B(x,r) \subset U \quad (r>0)$$
+
+% --------- Jatkuvuus ---------%
 \section{Jatkuvuus}
+
+\begin{definition}
+  $f: X \rightarrow Y$ on jva pisteessä $a$, jos $\forall \varepsilon > 0 \;
+  \exists \delta > 0$ s.e. $d'(f(x),f(a)) < \varepsilon$ aina kun $x \in X \:
+  \land \: d(x,a) < \delta$. Ehto voidaan kirjoittaa muodossa
+  $f B(a,\delta) \subset B(f(a), \varepsilon)$ tai $B(a,\delta) \subset
+  f^{-1} B(f(a),\epsilon)$.
+\end{definition}
+
+% --------- Suljetut joukot ---------%
 \section{Suljetut joukot}
 \newtheorem*{defn:closedSet}{Suljettu joukko}
 \begin{defn:closedSet}
