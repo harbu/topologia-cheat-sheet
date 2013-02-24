@@ -39,7 +39,7 @@
 \renewcommand{\section}{\@startsection{section}{1}{0mm}%
                                 {-1ex plus -.5ex minus -.2ex}%
                                 {0.5ex plus .2ex}%x
-                                {\color{red}\normalfont\large\bfseries}}
+                                {\color{blue}\normalfont\large\bfseries}}
 \renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
                                 {-1explus -.5ex minus -.2ex}%
                                 {0.5ex plus .2ex}%
@@ -128,9 +128,26 @@ frame=trbl,
   \end{multicols}
 \end{vktava}
 
-\newtheorem*{normi}{Normi}
+\newtheorem*{sistuloava}{Sisätuloavaruus}
+\begin{sistuloava}
+  on vektoriavaruus $E$ sekä sisätulo $(x,y) \mapsto x \cdot y : E \times E
+  \rightarrow \mathbb{R}$, jossa $\forall x,y,z \in E$ ja
+  $\forall a \in \mathbb{R}$ pätee
+  \begin{multicols}{2}
+    \begin{enumerate}
+      \item[(S1)]{$x \cdot y = y \cdot x$}
+      \item[(S2)]{$(ax) \cdot y = a(x \cdot y)$}
+      \item[(S3)]{$(x+y) \cdot z = x \cdot z + y \cdot z$}
+      \item[(S4)]{$x \cdot x \geq 0$}
+      \item[(S5)]{$x \cdot x = 0 \iff x = \overline{0}$}
+    \end{enumerate}
+  \end{multicols}
+\end{sistuloava}
+
+\newtheorem*{normi}{Normiavaruus}
 \begin{normi}
-  on $x \mapsto \|x\| : E \rightarrow \mathbb{R}_+$ vek.avaruudessa $E$ jos
+  on vektoriavaruus $E$ sekä normi
+  $x \mapsto \|x\| : E \rightarrow \mathbb{R}_+$
   \begin{itemize}
     \item[(N1)]{$\|x + y\| \leq \|x\| + \|y\|$}
     \item[(N2)]{$\|ax\| = |a|\|x\|$}
@@ -138,7 +155,9 @@ frame=trbl,
   \end{itemize}
 \end{normi}
 
-Jokainen sisätuloavaruus on normiavaruus.
+\begin{theorem}
+  Jokainen sisätuloavaruus on normiavaruus.
+\end{theorem}
 
 \newtheorem*{schwarz}{Schwarzin ey}
 \begin{schwarz}
@@ -147,6 +166,19 @@ Jokainen sisätuloavaruus on normiavaruus.
 
 % --------- Metriikka ---------%
 \section{Metriikka}
+Olkoon $d: X \times X \rightarrow \mathbb{R}_+$.
+\begin{definition}
+  Kuvaus $d$ on metriikka $X$:ssä, jos $\forall x,y,z \in X$:
+  \begin{enumerate}
+    \item[(M1)]{$d(x,z) \leq d(x,y) + d(y,z)$}
+    \item[(M2)]{$d(x,y) = d(y,x)$}
+    \item[(M3)]{$d(x,y) = 0 \iff x = y$}
+  \end{enumerate}
+\end{definition}
+
+\begin{theorem}
+  Kun $X := (E,\|.\|)$ saadaan normin määräämä metriikka $d(x,y) = \| x - y\|$.
+\end{theorem}
 
 % --------- Avoimet joukot ---------%
 \section{Avoimet joukot}
