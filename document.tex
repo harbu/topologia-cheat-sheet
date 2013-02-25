@@ -180,6 +180,54 @@ Olkoon $d: X \times X \rightarrow \mathbb{R}_+$.
   Kun $X := (E,\|.\|)$ saadaan normin määräämä metriikka $d(x,y) = \| x - y\|$.
 \end{theorem}
 
+% TODO: kuulat / pallot
+
+\newtheorem*{setdist}{Joukkojen välinen etäisyys}
+\begin{setdist}
+  Olk. $(X,d)$ M.A. ja $\emptyset \neq A \subset X$, $\emptyset \neq B
+  \subset X$. Nyt $d(A,B) = \inf \{ d(x,y) \; | \; x \in A, y \in B \}$.
+  Erikoistapaus $B = \{z\}$ (yksiö).
+\end{setdist}
+
+\begin{theorem}
+  $| d(x,A) - d(y,A) | \leq d(x,y)$
+\end{theorem}
+
+\newtheorem*{läpimitta}{Joukon läpimitta}
+\begin{läpimitta}
+  Olk. $(X,d)$ M.A. ja $\emptyset \neq A \subset X$. Nyt
+  $d(A) = \sup \{d(x,y) \; | \; x \in A, y \in A\} \in R_+ \cup \{\infty\}$.
+  $d(\emptyset) = 0$.
+\end{läpimitta}
+
+\begin{theorem}
+  Jos $A \subset B \subset X$, niin $d(A) \leq d(B)$.
+\end{theorem}
+
+% TODO: d(A) = 0 <=> #A <= 1 (?)
+
+\begin{theorem}
+  Olk. $(X,d)$ M.A., $a \in X$, $r > 0$. Nyt $d(B(a,r)) \leq d(\bar{B}(a,r))
+  \leq 2r$. Jos $X \neq \{\overline0\}$ normiavaruus, niin $=$.
+\end{theorem}
+
+\newtheorem*{rajoitetut}{Rajoitetut joukot}
+\begin{rajoitetut}
+  Osajoukko $A \subset (X,d)$ on raj., jos $d(A) < \infty$.
+\end{rajoitetut}
+% TODO: rajoitettu kuvaus (?)
+
+\begin{theorem}
+  Olk. $(X,d)$ M.A., $X \neq \emptyset$. Joukko $A \subset X$ on raj., $\iff$
+  se sisältyy $X$:n johonkin kuulaan $B(a,r)$.
+\end{theorem}
+
+\begin{theorem}
+  $A$ ja $B$ ovat $(X,d)$ raj. osajoukkoja $\implies$ $A \cup B$ raj. Jos
+  lisäksi $A \neq \emptyset \neq B$ niin $d(A \cup B) \leq d(A) + d(B) +
+  d(A,B)$.
+\end{theorem}
+
 % --------- Avoimet joukot ---------%
 \section{Avoimet joukot}
 Olkoon $(X,d)$ metrinen avaruus (=MA)
