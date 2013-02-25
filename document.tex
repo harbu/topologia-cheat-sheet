@@ -338,8 +338,25 @@ Olkoon $(X,d)$, $(Y,d')$ M.A ja $(E,\|.\|)$ normiavaruus.
       jvia pisteessä $a$, niin $\alpha f$ jva $a$:ssa.}
   \end{enumerate}
 \end{theorem}
-% TODO: projektiokuvaukset?
-% TODO: komponenttikuvaukset?
+
+\newtheorem*{projektio}{$\mathbb{R}^n$:n projektiot}
+\begin{projektio}
+  (jvia) kuvaksia $\text{pr}_j : \mathbb{R}^n \rightarrow \mathbb{R},
+  \: \text{pr}_j(x) = x_j$
+\end{projektio}
+
+\newtheorem*{komponenttikuvaus}{Komponenttikuvaus}
+\begin{komponenttikuvaus}
+  Olk. $f: X \rightarrow \mathbb{R}^n$ ehdolla $f(x) = (f_1(x), ...,
+  f_n(x)) \in \mathbb{R}^n$. Nyt kaikki $f_j : X \rightarrow \mathbb{R}$ ovat
+  komp.kuvauksia. Huom: $f_j = \text{pr}_j \circ f$ ja $f = (f_1,...,f_n)$.
+\end{komponenttikuvaus}
+
+\begin{theorem}
+  $f: X \rightarrow \mathbb{R}^n$ jva pisteessä $a \in X$ $\iff$ jokainen
+  komponenttikuvaus $f_j: X \rightarrow \mathbb{R}$ jva $a$:ssa.
+\end{theorem}
+
 
 % --------- Suljetut joukot ---------%
 \section{Suljetut joukot}
