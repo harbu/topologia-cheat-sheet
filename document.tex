@@ -423,10 +423,27 @@ Olkoon $(X,d)$, $(Y,d')$ M.A ja $(E,\|.\|)$ normiavaruus.
   S.E.Y.
   \begin{enumerate}
     \item[(1)]{$f$ on jva}
-    \item[(2)]{$\forall \, F \cls Y$: $f^{-1}[F] \cls X$ }
-    \item[(3)]{$\forall A \subset X$: $f[\bar{A}] \subset \overline{f[A]}$}
+    \item[(2)]{$\forall \, F \cls Y$: $f^{-1} F \cls X$ }
+    \item[(3)]{$\forall A \subset X$: $f \bar{A} \subset \overline{f A}$}
   \end{enumerate}
 \end{theorem}
+
+\newtheorem*{kasautumispiste}{Kasautumispiste}
+\begin{kasautumispiste}
+  Olk. $A \subset X$. Piste $x \in X$ on $A$:n kasautumispiste jos $\forall$
+  $x$:n ystö $U(x)$ pätee $\#(A \cap U(X)) = \infty$. Huom: riittää että
+  $\exists y \in A \cap U(x) $ s.e. $y \neq x$ kaikilla $U(x)$.
+\end{kasautumispiste}
+
+\begin{theorem}
+  Olk. $A \subset X$ ja $x \in X$. Tällöin $x \in \bar{A}$ $\iff$ $x$ on $A$:n
+  erakkopiste tai kasautumispiste.
+\end{theorem}
+
+\begin{theorem}
+  $\bar{A}$ saadaan lisäämällä $A$:han sen kasautumispisteet.
+\end{theorem}
+
 \end{multicols*}
 \end{document}
 
