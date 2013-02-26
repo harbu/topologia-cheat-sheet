@@ -101,11 +101,16 @@ frame=trbl,
 \end{theorem}
 
 \begin{theorem}
-  Olkoon $x,y \in \mathbb{R}$.
-  \begin{align*}
-    \max \{x,y\} = \nicefrac{1}{2}(x + y + |x-y|) \\
-    \min \{x,y\} = \nicefrac{1}{2}(x + y - |x-y|)
-  \end{align*}
+  Olkoon $x,y \in \mathbb{R}$. Nyt
+
+  $x \lor y = \max \{x,y\} = \nicefrac{1}{2}(x + y + |x-y|)$ ja
+
+  $x \land y = \min \{x,y\} = \nicefrac{1}{2}(x + y - |x-y|)$.
+\end{theorem}
+
+\begin{theorem}
+  Jos $f : [a,b] \rightarrow \mathbb{R}$ jva, niin $\exists M < \infty$ s.t.
+  $|f(x)| \leq M$ $\forall x \in [a,b]$.
 \end{theorem}
 
 % --------- Vektoriavaruudet ---------%
@@ -130,7 +135,7 @@ frame=trbl,
 
 \newtheorem*{sistuloava}{Sisätuloavaruus}
 \begin{sistuloava}
-  on vektoriavaruus $E$ sekä sisätulo $(x,y) \mapsto x \cdot y : E \times E
+  on vek.ava $E$ sekä sisätulo $(x,y) \mapsto x \cdot y : E \times E
   \rightarrow \mathbb{R}$, jossa $\forall x,y,z \in E$ ja
   $\forall a \in \mathbb{R}$ pätee
   \begin{multicols}{2}
@@ -146,7 +151,7 @@ frame=trbl,
 
 \newtheorem*{normi}{Normiavaruus}
 \begin{normi}
-  on vektoriavaruus $E$ sekä normi
+  on vek.ava $E$ sekä normi
   $x \mapsto \|x\| : E \rightarrow \mathbb{R}_+$
   \begin{itemize}
     \item[(N1)]{$\|x + y\| \leq \|x\| + \|y\|$}
