@@ -113,12 +113,19 @@ frame=trbl,
   $|f(x)| \leq M$ $\forall x \in [a,b]$.
 \end{theorem}
 
+\newtheorem*{väliarvolause}{Väliarvolause}
+\begin{väliarvolause}
+  Olk $f$ dva välillä $[a,b]$. Tällöin $\exists \xi \in ]a,b[$ s.e.  $f'(\xi) =
+  \frac{f(b) - f(a)}{b-a}$.
+\end{väliarvolause}
+
 % --------- Vektoriavaruudet ---------%
 \section{Vektoriavaruudet}
 
 \newtheorem*{vktava}{Vektoriavaruus}
 \begin{vktava}
   on joukko $E$ jossa $\forall x,y \in E$ ja $\forall a,b \in \mathbb{R}$
+  \setlength\multicolsep{3pt}
   \begin{multicols}{2}
     \begin{itemize}
       \item{$x + y \in E$, $ax \in E$}
@@ -138,6 +145,7 @@ frame=trbl,
   on vek.ava $E$ sekä sisätulo $(x,y) \mapsto x \cdot y : E \times E
   \rightarrow \mathbb{R}$, jossa $\forall x,y,z \in E$ ja
   $\forall a \in \mathbb{R}$ pätee
+  \setlength\multicolsep{3pt}
   \begin{multicols}{2}
     \begin{enumerate}
       \item[(S1)]{$x \cdot y = y \cdot x$}
@@ -448,6 +456,16 @@ Olkoon $(X,d)$, $(Y,d')$ M.A ja $(E,\|.\|)$ normiavaruus.
 \begin{theorem}
   $\bar{A}$ saadaan lisäämällä $A$:han sen kasautumispisteet.
 \end{theorem}
+
+
+% --------- Muuta ---------%
+\section{Muuta}
+\begin{itemize}
+  \item{$\bar{\mathbb{Q}} = \overline{\mathbb{Q}^C} = \mathbb{R}$}
+  \item{$A,B \cls \mathbb{R} \implies A \times B \cls \mathbb{R}^2$}
+  \item{Avaruudessa $C[a,b]$ sisätulo $f \cdot g = \int_{a}^{b} f(x) g(x) dx$}
+  \item{$\|x\|_0 = \max \{ |x_j| \: : \: 1 \leq j \leq n \}$}
+\end{itemize}
 
 \end{multicols*}
 \end{document}
