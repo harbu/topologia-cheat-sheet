@@ -204,9 +204,9 @@ Olkoon $(X,d)$ ja $(Y,d')$ metrisiä avaruuksia.
 \begin{defn:bilip}
   Sanomme, että kuvaus $f: X \rightarrow Y$ on $M$-bilipschitz, jos
   $\exists M \geq 1$ s.e.
-  $$
-  d(x,y) / M \leq d'(f(x), f(y)) \leq M d(x,y) \quad \forall x,y \in X
-  $$
+  $
+  d(x,y) / M \leq d'(f(x), f(y)) \leq M d(x,y) \: \forall x,y \in X
+  $
 \end{defn:bilip}
 % Epäyhtälöiden avaaminen; perustelua?
 
@@ -252,7 +252,131 @@ se on $e$-avoin. Merkitsemme $d \sim e$.
 
 % --------- Jonot ja raja-arvot ---------%
 \section{Jonot ja raja-arvot}
+Joukon $D$ jono $(x_n) \subset D$ on kuvaus $x: \mathbb{N} \rightarrow D$,
+jonka arvoja/pisteitä/jäseniä merkitään $x_n = x(n)$.
 
+\newtheorem*{defn:suppeneminen}{Suppeneminen}
+\begin{defn:suppeneminen}
+  Jono $(x_n) \subset X$ suppenee kohti pistettä $a \in X$, jos $\forall$ $a$:n
+  ystöä $U$ kohti $\exists n_0 \in \mathbb{N}$ s.e. $x_n \in U$ kun $n \geq
+  n_0$. Merkitään $x_n \rightarrow a$ (kun $n \rightarrow \infty$). Huom. $a$
+  yksikäsit.
+\end{defn:suppeneminen}
+
+\begin{theorem}
+  Olkoon $(x_n) \subset X$ ja $a \in X$. S.E.Y.
+  \begin{enumerate}
+    \item{$x_n \rightarrow a$.}
+    \item{Jos $a \in U$ ystö, niin $x_n \not\in U$ äärellisen monella $n \in
+      \mathbb{N}$.}
+    \item{$\forall \epsilon > 0 \: \exists n_0 \in \mathbb{N}$ s.e. $d(x_n, a) <
+      \epsilon$ kun $n \geq n_0$.}
+    \item{$d(x_n, a) \rightarrow 0$.}
+  \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+  Olkoon $A \subset X$ ja $a \in X$. Tällöin $a \in \bar{A}$ $\iff$ $\exists \:
+  (x_n) \subset A$ jolle $x_n \rightarrow a$.
+\end{theorem}
+
+\begin{theorem}
+  $A \cls X$ $\iff$ $A$ sisältää kaikkien $X$:ssä suppenevien jonojensa
+  raja-arvot.
+\end{theorem}
+
+\begin{theorem}
+  Olkoon $f: X \rightarrow Y$ ja $a \in X$. S.E.Y
+  \begin{enumerate}
+    \item{$f$ on jatkuva $a$:ssa.}
+    \item{Jos $(x_n) \subset X$ jolla $x_n \rightarrow a$, niin $f(x_n)
+      \rightarrow f(a)$.}
+  \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+  Olkoon $(x_k) \subset \mathbb{R}^n$. Nyt $x_k \rightarrow a \in \mathbb{R}^n$
+  $\iff$ $\text{pr}_j(x_k) \rightarrow \text{pr}_j(a)$, kun $k \rightarrow
+  \infty$, kaikilla $j = 1,...,n$.
+\end{theorem}
+
+\begin{theorem}
+  Olkoon $(x_n), (y_n) \subset X$ ja $x_n \rightarrow a$, $y_n \rightarrow b$.
+  Tällöin $d(x_n, y_n) \rightarrow d(a,b)$.
+\end{theorem}
+
+\begin{theorem}
+  Olkoon $E$ normiavar., $(x_n), (y_n) \subset E$, ja $x_n \rightarrow x_0$,
+  $y_n \rightarrow y_0$. Tällöin $x_n + y_n \rightarrow x_0 + y_0$. Jos $(a_n)
+  \subset \mathbb{R}$ ja $a_n \rightarrow a_0$, niin $a_n x_n \rightarrow a_0
+  x_0$.
+\end{theorem}
+
+\newtheorem*{defn:kasautumisarvo}{Kasautumisarvo}
+\begin{defn:kasautumisarvo}
+  Piste $a \in X$ on jonon $(x_n) \subset X$ kasautumisarvo, jos $\forall a \in
+  U$ ystö kohti, $x_n \in U$ äärettömän monella $n \in \mathbb{N}$.
+\end{defn:kasautumisarvo}
+
+\begin{theorem}
+  Jos $x_n \rightarrow a$, niin $a$ jonon $(x_n)$ ainoa kasautumisarvo.
+\end{theorem}
+
+\begin{theorem}
+  Jos $x_n \in A \subset X$ kaikilla $n \in \mathbb{N}$, niin jonon $(x_n)$
+  kasautumisarvot kuuluvat sulkeumaan $\bar{A}$.
+\end{theorem}
+
+\begin{theorem}
+  Olkoon $(x_n) \subset X$. Joukon $A = \{x_n : n \in \mathbb{N} \}$
+  kasautumispisteet ovat jonon $(x_n)$ kasautumisarvoja.
+\end{theorem}
+
+\newtheorem*{defn:osajono}{Osajono}
+\begin{defn:osajono}
+  Jonon $(x_n)$ osajono on jono $(y_k)$, jossa $y_k = x_{n_k}$ ja $n_1 < n_2 <
+  ...$ aidosti nouseva jono $\mathbb{N}$:ssä.
+\end{defn:osajono}
+
+\begin{theorem}
+  Jos $x_n \rightarrow a$, niin osajono $y_k \rightarrow a$.
+\end{theorem}
+
+\begin{theorem}
+  Piste $a$ on jonon $(x_n)$ kas.arvo $\iff$ $(x_n)$:llä osajono joka suppenee
+  kohti $a$:ta.
+\end{theorem}
+% Seuraus: avaruuden X jonolla (x_n) on kas.arvo <=> ainakin yksi suppeneva
+% osajono.
+
+\newtheorem*{defn:}{Osajono}
+\begin{defn:osajono}
+  Jonon $(x_n)$ osajono on jono $(y_k)$, jossa $y_k = x_{n_k}$ ja $n_1 < n_2 <
+  ...$ aidosti nouseva jono $\mathbb{N}$:ssä.
+\end{defn:osajono}
+
+\newtheorem*{defn:funktiojono}{Funktiojonon suppeneminen}
+\begin{defn:funktiojono}
+  Olkoon $f_1, f_2, ...$ jono kuvauksia $f_n : D \rightarrow X$, jossa $(X,d)$
+  m.a., ja $f: D \rightarrow X$ jokin kuvaus.
+
+  Jono $(f_n)$ suppenee kohti kuvausta $f$ \emph{pisteittäin}
+  $D$:ssä, jos $f_n(x) \rightarrow f(x) \; \forall x \in D$. Eli
+  $d(f_n(x), f(x)) \rightarrow 0$.
+
+  Jono $(f_n)$ suppenee kohti kuvausta $f$ \emph{tasaisesti} $D$:ssä, jos
+  $u_n$ = $\sup_{x \in D} d(f_n(x), f(x)) \rightarrow 0 $.
+\end{defn:funktiojono}
+% Tasainen suppeneminen => pisteittäin suppeneminen
+
+\begin{theorem}
+  $(f_n)$:n jäsenet jvia ja tas.supp. $f$:ää kohti $\implies$ $f$ jva.
+\end{theorem}
+
+\newtheorem*{defn:rajaarvot}{Raja-arvot}
+\begin{defn:rajaarvot}
+  ...
+\end{defn:rajaarvot}
 
 % --------- Täydellisyys. Tasainen jatkuvuus ---------%
 \section{Täydellisyys. Tasainen jatkuvuus}
