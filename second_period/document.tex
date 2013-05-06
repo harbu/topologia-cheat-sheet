@@ -246,8 +246,7 @@ se on $e$-avoin. Merkitsemme $d \sim e$.
 
 \begin{theorem}
   Olkoon $d$ joukon $X$ metriikka. Nyt $e(x,y) = \text{min}\{d(x,y), 1\}$ on
-  $X$:n metriikka ja $d \sim e$. Siispä jokainen metriikka on ekvivalentti
-  rajoitetun metriikan kanssa.
+  $X$:n metriikka ja $d \sim e$.
 \end{theorem}
 
 % --------- Jonot ja raja-arvot ---------%
@@ -405,9 +404,9 @@ $(X,d)$ täydellinen, jos sen jokainen Cauchyn jono suppenee.
 \end{definition}
 
 \begin{theorem}
-  Ol. $f: X \rightarrow X$ täyd. avaruuden $X \neq 0$ kontraktio. Tällöin
-  $f$:llä on täsmälleen yksi kiintopiste, jota kohti jono $f(x), f(f(x)), ...$
-  suppenee, missä $x \in X$ m.v.
+  Ol. $f: X \rightarrow X$ täyd. avaruuden $X \neq \emptyset$ kontraktio.
+  Tällöin $f$:llä on täsmälleen yksi kiintopiste, jota kohti jono $f(x),
+  f(f(x)), ...$ suppenee, missä $x \in X$ m.v.
 \end{theorem}
 % Virhearvio?
 
@@ -423,6 +422,70 @@ $(X,d)$ täydellinen, jos sen jokainen Cauchyn jono suppenee.
 
 % --------- Muuta ---------%
 \section{Kompaktius}
+Metrinen avaruus on kompakti, jos sen jokaisella jonolla on suppeneva osajono.
+Esim. äärellinen joukko ja $\emptyset$ kompakteja. $\mathbb{R}$ ei kompakti.
+Avoimet ja puoliavoimet ei kompakteja, suljetut ovat.
+
+%\begin{theorem}
+%  Rajoitetulla reaalilukujonolla on aina suppeneva osajono.
+%\end{theorem}
+
+\begin{theorem}
+  Avaruuden $X$ kompakti osajoukko on aina suljettu $X$:ssä.
+\end{theorem}
+
+\begin{theorem}
+  Jos $X$ on kompakti ja $A \cls X$, niin $A$ on kompakti.
+\end{theorem}
+
+\begin{theorem}
+  Ol. $X$ kompakti ja $A \subset X$. Tällöin $A$ kompakti $\iff$ $A \cls X$.
+\end{theorem}
+% Suljettu relatiivinen käsite vs. Kompakti absoluuttinen käsite.
+
+\begin{theorem}
+  Kompakti metrinen avaruus on rajoitettu.
+\end{theorem}
+
+\begin{theorem}
+  Jos $\emptyset \neq A \subset \mathbb{R}$ on kompakti, niin $A$:ssa on suurin
+  ja pienin arvo.
+\end{theorem}
+
+\begin{theorem}
+  $A \subset \mathbb{R}^n$ on kompakti $\iff$ $A$ on suljettu ja rajoitettu.
+\end{theorem}
+
+\begin{theorem}
+  Kompaktin avaruuden äärettömällä osajoukolla on ainakin yksi kasautumispiste.
+\end{theorem}
+
+\begin{theorem}
+  Kompaktin joukon kuva jva kuvauksessa on kompakti.
+\end{theorem}
+
+\begin{theorem}
+  Jos $X$ on kompakti ja $X \approx Y$, niin $Y$ on kompakti.
+\end{theorem}
+
+\begin{theorem}
+  Jos $X \neq \emptyset$ on kompakti ja $f: X \rightarrow \mathbb{R}$ jva, niin
+  $f$ saa $X$:ssä suurimman ja pienimmän arvonsa.
+\end{theorem}
+
+\begin{theorem}
+  Jos $X$ on kompakti ja $f: X \rightarrow Y$ jva bijektio, niin $f$ on homeo.
+\end{theorem}
+
+\begin{theorem}
+  Kompakti metrinen avaruus on täydellinen.
+\end{theorem}
+
+\begin{theorem}
+  Jos $X$ kompakti ja $f: X \rightarrow Y$ jva, niin f on tas.jva.
+\end{theorem}
+
+% L 13.22 ja 13.23, 13.24
 
 \end{multicols*}
 \end{document}
