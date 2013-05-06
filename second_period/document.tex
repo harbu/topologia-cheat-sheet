@@ -226,6 +226,29 @@ Olkoon $(X,d)$ ja $(Y,d')$ metrisiä avaruuksia.
 
 % ---------- Metriikkojen ekvivalenssi --------%
 \section{Metriikkojen ekvivalenssi}
+Joukon $X$ metriikat $d$ ja $e$ ovat topologisesti ekvivalentit, jos
+$\mathcal{T}_d = \mathcal{T}_e$, t.s. joukko $U \subset X$ on $d$-avoin joss.
+se on $e$-avoin. Merkitsemme $d \sim e$.
+
+\begin{theorem}
+  $d \sim e$ $\iff$ $\text{id}: (X,d) \rightarrow (X,e)$ on homeo.
+\end{theorem}
+
+\begin{definition}
+  Joukon $X$ metriikat $d$ ja $e$ ovat \emph{bilipschitz-ekvivalentit}, jos
+  $\text{id}: (X,d) \rightarrow (X,e)$ on bilip.
+\end{definition}
+% Näennäisesti heikompi ehto messiin?
+
+\begin{theorem}
+  $d$ ja $e$ bilipschitz-ekvivalentit $\implies$ $d \sim e$.
+\end{theorem}
+
+\begin{theorem}
+  Olkoon $d$ joukon $X$ metriikka. Nyt $e(x,y) = \text{min}\{d(x,y), 1\}$ on
+  $X$:n metriikka ja $d \sim e$. Siispä jokainen metriikka on ekvivalentti
+  rajoitetun metriikan kanssa.
+\end{theorem}
 
 % --------- Jonot ja raja-arvot ---------%
 \section{Jonot ja raja-arvot}
