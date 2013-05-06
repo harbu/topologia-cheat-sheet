@@ -93,8 +93,45 @@ frame=trbl,
 \begin{multicols*}{3}
 % CHEAT SHEET: Multicol params
 
+Olkoon $(X,d)$ ja $(Y,d')$ metrisiä avaruuksia.
+
 % --------- Relatiivitopologia ---------%
 \section{Relatiivitopologia}
+
+\begin{definition}
+  Olkoon $A \subset X$, jolloin saadaan indusoitu M.A. $(A,d_A)$, jonka
+  avointen joukkojen kokoelmaa $\mathcal{T}_{d_A} = \{ U : U \opn A \}$
+  kutsutaan $A$:n relatiivitopologiaksi.
+\end{definition}
+
+% Tarkempi määrittely/kuvaus siitä, mitä suljettu/avoin merkitsee
+% relatiivitopologiassa?
+
+\begin{theorem}
+  Olkoon $U \subset A \subset X$ ja $E \subset A \subset X$.
+  \begin{enumerate}
+    \item{$U \opn A \iff \exists V \opn X \;:\; U = A \cap V$.}
+    \item{Jos $U \opn A \opn X$, niin $U \opn X$.}
+    \item{$\text{cl}_A E = A \cap \bar{E}$.}
+    \item{$E \cls A \iff \exists F \cls X \;:\; E = A \cap F$.}
+    \item{Jos $E \cls A \cls X$, niin $E \cls X$.}
+  \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+  Olkoon $A \subset X$. Jos $f: X \rightarrow Y$ jva, niin myös $f|A$ jva.
+\end{theorem}
+
+\begin{theorem}
+  Olkoon $f: X \rightarrow Y$, $f X \subset B \subset Y$, ja $f_1 : X
+  \rightarrow B$ $f$:n määrittelemä kuvaus. Tällöin $f$ jva $\iff$ $f_1$ jva.
+\end{theorem}
+
+\begin{theorem}
+  Olkoon $X = A_1 \cup ... \cup A_k$, missä $A_j \cls X \;$ kaikilla $j$.
+  Olkoon $f: X \rightarrow Y$. Jos $f|A_j$ jva $\forall j$, niin
+  $f$ jva.
+\end{theorem}
 
 
 % --------- Sisä-, ulko- ja reunapiste ---------%
