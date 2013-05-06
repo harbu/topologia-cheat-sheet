@@ -99,7 +99,7 @@ Olkoon $(X,d)$ ja $(Y,d')$ metrisiä avaruuksia.
 \section{Relatiivitopologia}
 
 \begin{definition}
-  Olkoon $A \subset X$, jolloin saadaan indusoitu M.A. $(A,d_A)$, jonka
+  Olkoon $A \subset X$, jolloin saadaan indusoitu m.a. $(A,d_A)$, jonka
   avointen joukkojen kokoelmaa $\mathcal{T}_{d_A} = \{ U : U \opn A \}$
   kutsutaan $A$:n relatiivitopologiaksi.
 \end{definition}
@@ -137,7 +137,7 @@ Olkoon $(X,d)$ ja $(Y,d')$ metrisiä avaruuksia.
 % --------- Sisä-, ulko- ja reunapiste ---------%
 \section{Sisä-, ulko- ja reunapiste}
 \begin{definition}
-  Olkoon $A \subset X$, ja $x \in X$. Sanomme, että $x$ on $A$:n
+  Olkoon $A \subset X$, ja $x \in X$. Nyt $x$ on $A$:n
   \begin{enumerate}
     \item{sisäpiste, jos $x$:llä on ystö $U \subset A$.}
     \item{ulkopiste, jos $x$:llä on ystö $U \subset A^C$. (ei kohtaa $A$:ta)}
@@ -170,6 +170,59 @@ Olkoon $(X,d)$ ja $(Y,d')$ metrisiä avaruuksia.
 
 % --------- Homeomorfismi ---------%
 \section{Homeomorfismi}
+\begin{definition}
+  Kuvaus $f: X \rightarrow Y$ on homeomorfismi, jos $f$ on bijektio, $f$ jva
+  ja, $f^{-1}: Y \rightarrow X$ jva. Tällöin $f: X \approx Y$.
+  Vaihtoehto kolmannelle ehdolle: Jos $U \opn X \implies f U \opn Y$, tai
+  suljettu-versio (AKE).
+\end{definition}
+
+\newtheorem*{defn:upotus}{Upotus}
+\begin{defn:upotus}
+  on kuvaus $f: X \rightarrow Y$, jos $f_1 : X \rightarrow f X$ homeo, ts. $f$
+  on injektio, $f$ jva, ja ${f_1}^{-1}: f X \rightarrow X$ jva (myös AKE).
+\end{defn:upotus}
+
+\begin{theorem}
+  Homeomorfismi on ekvivalenssirelaatio.
+\end{theorem}
+% Tarkempi määrittely tarpeen?
+% Homeomorfismiluokat?
+
+\begin{theorem}
+  Kuvaus $f: X \rightarrow Y$ homeo $\iff$ $f$ bijektio ja $\mathcal{T}_{d'} =
+  f \mathcal{T}_d \,(= \{ f U : U \in \mathcal{T}_d \})$.
+\end{theorem}
+
+\begin{theorem}
+  Homeo. säilyttää kaikki topologiset ominaisuudet.
+\end{theorem}
+% Tapausket lueteltu?
+% Vs. metriset ominaisuudet?
+
+\newtheorem*{defn:bilip}{Bilip}
+\begin{defn:bilip}
+  Sanomme, että kuvaus $f: X \rightarrow Y$ on $M$-bilipschitz, jos
+  $\exists M \geq 1$ s.e.
+  $$
+  d(x,y) / M \leq d'(f(x), f(y)) \leq M d(x,y) \quad \forall x,y \in X
+  $$
+\end{defn:bilip}
+% Epäyhtälöiden avaaminen; perustelua?
+
+\begin{theorem}
+  Bilipschitz-kuvaus on upotus.
+\end{theorem}
+
+\newtheorem*{defn:isometria}{Isometria}
+\begin{defn:isometria}
+  Kuvaus $f: X \rightarrow Y$ on isometria, jos se säilyttää etäisyydet, ts.
+  $f$ on 1-bilip. Esim. inkluusiokuvaus $A \hookrightarrow X$.
+\end{defn:isometria}
+
+\begin{theorem}
+  Bijektiivinen isometria säilyttää kaikki metriset ominaisuudet.
+\end{theorem}
 
 % ---------- Metriikkojen ekvivalenssi --------%
 \section{Metriikkojen ekvivalenssi}
