@@ -136,6 +136,36 @@ Olkoon $(X,d)$ ja $(Y,d')$ metrisiä avaruuksia.
 
 % --------- Sisä-, ulko- ja reunapiste ---------%
 \section{Sisä-, ulko- ja reunapiste}
+\begin{definition}
+  Olkoon $A \subset X$, ja $x \in X$. Sanomme, että $x$ on $A$:n
+  \begin{enumerate}
+    \item{sisäpiste, jos $x$:llä on ystö $U \subset A$.}
+    \item{ulkopiste, jos $x$:llä on ystö $U \subset A^C$. (ei kohtaa $A$:ta)}
+    \item{reunapiste, muutoin. Eli $x$:n jokainen ystö kohtaa sekä $A$:n että
+      $A^C$:n.}
+  \end{enumerate}
+  Vastaavat pistejoukot $X = \text{int}(A) \cup \text{ext}(A) \cup \partial A$
+  erilliset.
+\end{definition}
+
+% Esimerkkejä?
+
+\begin{theorem}
+  \begin{enumerate}
+    \item{$\text{int}(A) \subset A$, $\text{ext}(A) \subset A^C$.}
+    \item{$A$ avoin $\iff$ $\text{int}(A) = A$.}
+    \item{$\text{ext}(A) = \text{int}(A^C)$, $\text{int}(A) = \text{ext}(A^C)$.}
+    \item{$\text{ext}(A) = \bar{A}^C$,
+      $\text{int}(A) = \overline{A^C}^C$.}
+    \item{$\bar{A} = \text{int}(A) \cup \partial A = A \cup \partial A$.}
+    \item{$\partial A = \bar{A} \cap \overline{A^C} =
+      \bar{A} \setminus \text{int}(A)$.}
+    \item{$\partial A$ aina suljettu.}
+    \item{$\partial A = \partial A^C$.}
+    \item{Jos $A$ avoin, niin $\partial A = \bar{A} \setminus A$.}
+    \item{$\text{int}(A)$ on $X$:n laajin osajoukko, joka sisältyy $A$:han.}
+  \end{enumerate}
+\end{theorem}
 
 
 % --------- Homeomorfismi ---------%
