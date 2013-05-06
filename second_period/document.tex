@@ -380,6 +380,46 @@ jonka arvoja/pisteitä/jäseniä merkitään $x_n = x(n)$.
 
 % --------- Täydellisyys. Tasainen jatkuvuus ---------%
 \section{Täydellisyys. Tasainen jatkuvuus}
+$(X,d)$ täydellinen, jos sen jokainen Cauchyn jono suppenee.
+\begin{definition}
+  Jono $(x_n)$ on Cauchy, jos $\forall \epsilon > 0 \; \exists n_0 \in
+  \mathbb{N}$ s.e. $d(x_n, x_k) < \epsilon$, kun $n \geq n_0$ ja $k \geq n_0$.
+\end{definition}
+% Lisää L12.2?
+
+\begin{theorem}
+  Jos jono $(x_n)$ suppenee, niin se on Cauchy.
+\end{theorem}
+
+\begin{theorem}
+  $\mathbb{R}^n$ on täydellinen.
+\end{theorem}
+
+\begin{theorem}
+  Ol. $X$ täyd. ja $A \subset X$. Nyt A täyd. $\iff$ $A \cls X$.
+\end{theorem}
+
+\begin{definition}
+  Kuvaus $f: X \rightarrow Y$ on kontraktio (kutistus), jos se on
+  $q$-Lipschitz, missä $0 \leq q < 1$.
+\end{definition}
+
+\begin{theorem}
+  Ol. $f: X \rightarrow X$ täyd. avaruuden $X \neq 0$ kontraktio. Tällöin
+  $f$:llä on täsmälleen yksi kiintopiste, jota kohti jono $f(x), f(f(x)), ...$
+  suppenee, missä $x \in X$ m.v.
+\end{theorem}
+% Virhearvio?
+
+\newtheorem*{defn:tasjva}{Tasainen jatkuvuus}
+\begin{defn:tasjva}
+  Kuvaus $f: X \rightarrow Y$ on tas.jva. $X$:ssä, jos $\forall \epsilon > 0 \;
+  \exists \delta > 0$ s.e. $d'(f(x), f(y)) < \epsilon$, kun $x,y \in X$ ja
+  $d(x,y) < \delta$. Huom: Tas jva $\implies$ jva.
+\end{defn:tasjva}
+
+% L 12.14?
+
 
 % --------- Muuta ---------%
 \section{Kompaktius}
